@@ -37,6 +37,23 @@ namespace UsersWinForms.Controllers
         {
             GetAll().Add(u);
         }
+        public static bool Update (int id, User u)
+        {
+            //si passano sia l'id della cella da modificare che la modifica effettiva 
+            if (u.Id != id) return false; //se non c'è un utente con questo id non modifico nulla sennò modifico
+            User candidate = Find(q => q.Id == id);
+            if (candidate == null) return false;
+            candidate.FirstName = u.FirstName;
+            candidate.LastName = u.LastName;
+            candidate.Email = u.Email;
+            candidate.Username = u.Username;
+            candidate.Password = u.Password;
+            candidate.Gender = u.Gender;
+            candidate.Age = u.Age;
+            candidate.BirthDate = u.BirthDate;
+            //faccio tutto questo per non cambiare anche l'id che deve rimanere quello
+            return true;
+        }
         public static List<string> GetGenders()
         {
             return GetAll().Select(s => s.Gender).Distinct().ToList();

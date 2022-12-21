@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32922.545
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users", "Users\Users.csproj", "{73C009AF-F148-43A5-879F-D31627BE8DA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersWinForms", "UsersWinForms\UsersWinForms.csproj", "{42BE1FBA-DF6F-4D5F-85A3-1D5EB8FA3BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlNuovoProgetto", "UserControlNuovoProgetto\UserControlNuovoProgetto.csproj", "{62522071-AA36-4898-9588-8A305DC7F972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{42BE1FBA-DF6F-4D5F-85A3-1D5EB8FA3BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42BE1FBA-DF6F-4D5F-85A3-1D5EB8FA3BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42BE1FBA-DF6F-4D5F-85A3-1D5EB8FA3BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62522071-AA36-4898-9588-8A305DC7F972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62522071-AA36-4898-9588-8A305DC7F972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62522071-AA36-4898-9588-8A305DC7F972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62522071-AA36-4898-9588-8A305DC7F972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

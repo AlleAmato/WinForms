@@ -14,6 +14,42 @@ namespace UsersWinForms
 {
     public partial class EditUser : Form
     {
+        //region viewmodel
+        #region ViewModel
+
+        //private User user;
+        /*private User UservM
+        {
+            get {
+                return new user
+                {
+                nbrId.Value = u.Id;
+                nbrEtà.Value = u.Age;
+                txtFirstName.Text = u.FirstName;
+                txtLastName.Text = u.LastName;
+                txtEmail.Text = u.Email;
+                txtPassword.Text = u.Password;
+                txtUsername.Text = u.Username;
+                dtBirthDate.Value = u.BirthDate;
+                cmbSesso.SelectedItem = u.Gender;
+            }; 
+            }
+            set { 
+            Id=Value.    ...
+ 
+                             
+}
+                 }*/
+        
+        #endregion
+        //end region
+        private User u;
+        private bool isNew = true;
+        public EditUser(User u) : this()
+        {
+            this.u = u;
+            isNew = false;
+        }
         public EditUser()
         {
             InitializeComponent();
@@ -23,6 +59,21 @@ namespace UsersWinForms
         {
             cmbSesso.DataSource = Users.GetGenders();
             cmbSesso.SelectedIndex = -1;
+            lblTitolo.Text = "Nuovo Utente";
+            if (!isNew)
+            {
+                nbrId.Value = u.Id;
+                nbrEtà.Value = u.Age;
+                txtFirstName.Text = u.FirstName;
+                txtLastName.Text = u.LastName;
+                txtEmail.Text = u.Email;
+                txtPassword.Text = u.Password;
+                txtUsername.Text = u.Username;
+                dtBirthDate.Value = u.BirthDate;
+                cmbSesso.SelectedItem = u.Gender;
+
+                lblTitolo.Text = "Modifica Utente";
+            }//il caricamento dei dati funziona ora devo cercare di non duplicarlo e di sostituirlo a quello vecchio
         }
 
         private void btnAnnulla_Click(object sender, EventArgs e)
@@ -44,9 +95,18 @@ namespace UsersWinForms
                 Gender = (string)(cmbSesso.SelectedItem),
                 BirthDate = dtBirthDate.Value
             };
-
-            Users.Add(nuovo);
+            if (isNew)
+                Users.Add(nuovo);
+            else
+            {if( Users.Update(u.Id, nuovo) == false)
+                {
+                    MessageBox.Show("Errore nell'aggiornamento");
+                }
+            
+            }
             Close();
         }
+
+
     }
 }
